@@ -1,0 +1,19 @@
+.el-container {
+  height: 100%;
+  .el-aside{
+    background: var(--slide-bg);
+    box-shadow: 2px 0px 2px 0px rgba(0,0,0,0.1) ;
+  }
+  // .fy-title,.el-sub-menu__title,.el-menu-item{
+  //   color: var(--slide-text-bg);
+  // }
+  .el-menu{
+    border: none;
+    background: inherit;
+  }
+  .el-header{
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.1) ;
+    // background: var(--slide-bg);
+  } 
+}
+

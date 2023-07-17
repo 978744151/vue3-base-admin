@@ -1,0 +1,180 @@
+.clear {
+  clear: both;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.w-in{
+  width: inherit;
+}
+.h-in{
+  width: inherit;
+}
+.w-100{
+  width: 100%;
+}
+.h-100{
+  height: 100%;
+}
+.point{
+cursor: pointer;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.col-center {
+  align-items: center;
+}
+
+.col-top {
+  align-items: flex-start;
+}
+
+.col-bottom {
+  align-items: flex-end;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+.row-left {
+  justify-content: flex-start;
+}
+
+.row-right {
+  justify-content: flex-end;
+}
+
+.row-around {
+  justify-content: space-around;
+}
+
+.row-between {
+  justify-content: space-between;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.rela {
+  position: relative;
+}
+
+.abso {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.vxe-grid {
+  z-index: 0;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.cube-two-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+// 定义flex等分
+@for $i from 0 through 12 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}
+
+// 定义字体(px)单位，小于20都为px单位字体
+@for $i from 9 to 60 {
+  .font-#{$i} {
+    font-size: $i + px;
+  }
+}
+
+// 定义内外边距，历遍1-80
+@for $i from 0 through 80 {
+  // 只要双数和能被5除尽的数
+  @if $i % 2 == 0 or $i % 5 == 0 {
+    // 得出：u-margin-30或者u-m-30
+    .margin-#{$i},
+    .m-#{$i} {
+      margin: $i + px !important;
+    }
+
+    // 得出：u-padding-30或者u-p-30
+    .padding-#{$i},
+    .p-#{$i} {
+      padding: $i + px !important;
+    }
+
+    @each $short, $long in l left, t top, r right, b bottom {
+      // 缩写版，结果如： m-l-30
+      // 定义外边距
+      .m-#{$short}-#{$i} {
+        margin-#{$long}: $i + px !important;
+      }
+
+      // 定义内边距
+      .p-#{$short}-#{$i} {
+        padding-#{$long}: $i + px !important;
+      }
+
+      // 完整版，结果如：margin-left-30
+      // 定义外边距
+      .margin-#{$long}-#{$i} {
+        margin-#{$long}: $i + px !important;
+      }
+
+      // 定义内边距
+      .padding-#{$long}-#{$i} {
+        padding-#{$long}: $i + px !important;
+      }
+    }
+  }
+}
+
